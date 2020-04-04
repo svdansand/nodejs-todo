@@ -9,7 +9,7 @@ steps:
 - name: "gcr.io/cloud-builders/gke-deploy"
   args:
   - run
-  - --filename=/GKE-Deploy/nodejs-deploy.yaml
+  - --filename=./GKE-Deploy/nodejs-deploy.yaml
   - --image=gcr.io/dansand/github.com/svdansand/nodejs-todo:$COMMIT_SHA
   - --location=us-east1-b
   - --cluster=dansand-test-1
