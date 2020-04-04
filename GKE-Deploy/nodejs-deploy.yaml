@@ -27,5 +27,3 @@ spec:
         env:
         - name: MONGO_DBCONNECTION
           value: "mongodb://mongo:27017/todo"
-        - name: MONGO_DBCONNECTION2
-          value: "mongodb://mongo:27017/todo"
