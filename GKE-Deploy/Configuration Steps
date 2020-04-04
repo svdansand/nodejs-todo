@@ -10,9 +10,9 @@ kubectl apply -f GKE_SSD.yaml
 kubectl apply -f mongo-stateful-set.yaml
 
 #check to see if the stateful set deployed
+#create headless service - this means it is only visible from inside the cluster
 kubectl get statefulset
 
-#create headless service - this means it is only visible from inside the cluster
-kubectl apply -f mongo-service.yaml
-
 #Deploy NodeJS front end client
+#This comes when the github checkin happens and then the build process kicks off
+#It uses the nodejs-deploy file to specify the endpoints and ENV variables to connect to mongo

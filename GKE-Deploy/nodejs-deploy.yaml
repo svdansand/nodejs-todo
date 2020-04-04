@@ -26,7 +26,7 @@ spec:
         - containerPort: 8080
         env:
         - name: MONGO_DBCONNECTION
-          value: "mongodb://mongo:27017/todo"
+          value: "mongodb://mongo.default.svc.cluster.local:27017/todo"
 ---
 apiVersion: v1
 kind: Service
