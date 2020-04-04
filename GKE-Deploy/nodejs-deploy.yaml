@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nodejs-todo
-        image: gcr.io/dansand/github.com/svdansand/nodejs-todo:latest
+        image: gcr.io/dansand/github.com/svdansand/nodejs-todo
         resources:
           requests:
             memory: "64Mi"
@@ -27,3 +27,17 @@ spec:
         env:
         - name: MONGO_DBCONNECTION
           value: "mongodb://mongo:27017/todo"
+---
+apiVersion: v1
+kind: Service
+metadata:
+ name: nodejs-todo
+ labels:
+   name: nodejs-todo
+spec:
+ ports:
+ - port: 8080
+   targetPort: 80
+ type: LoadBalancer
+ selector:
+   app: nodejs-todo-app
