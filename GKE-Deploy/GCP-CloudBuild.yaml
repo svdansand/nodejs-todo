@@ -5,5 +5,13 @@ steps:
 # Push the image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/dansand/github.com/svdansand/nodejs-todo:$COMMIT_SHA']
+# deploy container image to GKE
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --filename=/GKE-Deploy/nodejs-deploy.yaml
+  - --image=gcr.io/dansand/github.com/svdansand/nodejs-todo:$COMMIT_SHA
+  - --location=us-east1-b
+  - --cluster=dansand-test-1
 images:
 - gcr.io/dansand/github.com/svdansand/nodejs-todo
