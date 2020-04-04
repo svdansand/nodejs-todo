@@ -1,0 +1,21 @@
+{
+    "restartable": "rs",
+    "ignore": [
+        ".git",
+        "node_modules/**/node_modules"
+    ],
+    "verbose": true,
+    "execMap": {
+        "js": "node --harmony"
+    },
+    "events": {
+        "restart": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
+    },
+    "watch": [],
+    "env": {
+        "NODE_ENV": "development",
+        "appInsightsKey": "YOUR_APP_KEY_HERE",
+        "MONGO_DBCONNECTION": "YOUR_MONGO_CONNECTION_HERE"
+    },
+    "ext": "js json"
+}
