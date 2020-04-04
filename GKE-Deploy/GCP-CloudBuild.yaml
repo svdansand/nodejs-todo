@@ -1,0 +1,9 @@
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/dansand/github.com/svdansand/nodejs-todo:$COMMIT_SHA', '.']
+# Push the image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/dansand/github.com/svdansand/nodejs-todo:$COMMIT_SHA']
+images:
+- gcr.io/dansand/github.com/svdansand/nodejs-todo

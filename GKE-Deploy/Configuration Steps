@@ -1,0 +1,18 @@
+#refresh your kubectl command
+gcloud container clusters get-credentials dansand-test-1 --zone us-east1-b
+
+#Deploy MongoDB Instance in K8S with Persisitent Disk
+
+#deploy SSD Persistent storage class
+kubectl apply -f GKE_SSD.yaml
+
+#deploy the stateful set 
+kubectl apply -f mongo-stateful-set.yaml
+
+#check to see if the stateful set deployed
+kubectl get statefulset
+
+#create headless service - this means it is only visible from inside the cluster
+kubectl apply -f mongo-service.yaml
+
+#Deploy NodeJS front end client
