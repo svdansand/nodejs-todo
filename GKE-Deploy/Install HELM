@@ -1,0 +1,11 @@
+#Download and Get HELM Scrips
+
+curl https://raw.githubusercontent.com/kubernetes/helm/master/scripts/get-helm-3 > get_helm.sh
+chmod 700 get_helm.sh
+./get_helm.sh
+
+#Mongodb replica set from HELM - https://hub.helm.sh/charts/stable/mongodb-replicaset
+helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+helm install my-mongodb-replicaset stable/mongodb-replicaset
+
+#Change the client connection string
