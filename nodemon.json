@@ -14,8 +14,7 @@
     "watch": [],
     "env": {
         "NODE_ENV": "development",
-        "appInsightsKey": "YOUR_APP_KEY_HERE",
-        "MONGO_DBCONNECTION": "YOUR_MONGO_CONNECTION_HERE"
+        "MONGO_DBCONNECTION": "mongodb://localhost:27017/todos"
     },
     "ext": "js json"
 }
