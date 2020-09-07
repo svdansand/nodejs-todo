@@ -26,7 +26,8 @@ spec:
         - containerPort: 8080
         env:
         - name: MONGO_DBCONNECTION
-          value: "mongodb://mongo-0.mongo.mongo-namespace.svc.cluster.local,mongo-1.mongo.mongo-namespace.svc.cluster.local,mongo-2.mongo.mongo-namespace.svc.cluster.local:27017/todos?replicaSet=rs0"
+          #value: "mongodb://mongo-0.mongo.mongo-namespace.svc.cluster.local,mongo-1.mongo.mongo-namespace.svc.cluster.local,mongo-2.mongo.mongo-namespace.svc.cluster.local:27017/todos?replicaSet=rs0"
+          value: "mongodb://mongo-0.mongo.default.svc.cluster.local:27017/todos"
 ---
 apiVersion: v1
 kind: Service

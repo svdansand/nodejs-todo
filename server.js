@@ -12,6 +12,7 @@ var baseConfig = require('./config/base.js');
 
 // configuration ===============================================================
 console.info('Trying to connect to MONGODB');
+/*
 var connectWithRetry = function() {
     return mongoose.connect(database.localUrl, function(err) {
       if (err) {
@@ -21,8 +22,8 @@ var connectWithRetry = function() {
     });
   };
 connectWithRetry();
-
-// mongoose.connect(database.localUrl); // Connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
+*/
+ mongoose.connect(database.localUrl); // Connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
 
 app.use(express.static('./public')); // set the static files location /public/img will be /img for users
 app.use(morgan('dev')); // log every request to the console
