@@ -11,7 +11,7 @@ steps:
   - run
   - --filename=./GKE-Deploy/nodejs-deploy.yaml
   - --image=gcr.io/dansand/github.com/svdansand/nodejs-todo:$COMMIT_SHA
-  - --location=us-east1-b
-  - --cluster=dansand-test-1
+  - --location=us-central1-c
+  - --cluster=cluster-1
 images:
 - gcr.io/dansand/github.com/svdansand/nodejs-todo

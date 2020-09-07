@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mongo
-  namespace: mongo-namespace # Change or remove me
+  namespace: mongo-namesapce # Change or remove me
 spec:
   serviceName: mongo
   replicas: 3
@@ -71,23 +71,7 @@ spec:
         component: mongo-pvc
     spec:
       accessModes: [ "ReadWriteOnce" ]
-      storageClassName: fast
+      storageClassName: standard
       resources:
         requests:
           storage: 10Gi
----
-apiVersion: v1
-kind: Service
-metadata:
- name: mongo
- labels:
-   app: mongo
-   component:   database-service
-spec:
- ports:
- - port: 27017
-   targetPort: 27017
- clusterIP: None
- selector:
-   app: mongo
-   component: database
