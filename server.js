@@ -23,6 +23,7 @@ var connectWithRetry = function() {
   };
 connectWithRetry();
 */
+console.info('Trying to connect to server:' + database.localUrl);
  mongoose.connect(database.localUrl); // Connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
 
 app.use(express.static('./public')); // set the static files location /public/img will be /img for users
