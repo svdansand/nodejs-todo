@@ -11,7 +11,18 @@ var methodOverride = require('method-override');
 var baseConfig = require('./config/base.js');
 
 // configuration ===============================================================
-mongoose.connect(database.localUrl); // Connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
+console.info('Trying to connect to MONGODB');
+var connectWithRetry = function() {
+    return mongoose.connect(database.localUrl, function(err) {
+      if (err) {
+        console.error('Failed to connect to mongo on startup - retrying in 5 sec', err);
+        setTimeout(connectWithRetry, 5000);
+      }
+    });
+  };
+connectWithRetry();
+
+// mongoose.connect(database.localUrl); // Connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
 
 app.use(express.static('./public')); // set the static files location /public/img will be /img for users
 app.use(morgan('dev')); // log every request to the console

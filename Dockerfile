@@ -1,4 +1,4 @@
-FROM node:boron
+FROM node
 # Create app directory
 RUN mkdir -p /src/app
 WORKDIR /src/app
@@ -14,4 +14,3 @@ EXPOSE 8080
 CMD [ "npm", "start" ]
 
 #This app also requires MongoDB
-#docker pull mongo
