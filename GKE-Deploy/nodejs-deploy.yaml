@@ -27,7 +27,8 @@ spec:
         env:
         - name: MONGO_DBCONNECTION
           #value: "mongodb://mongo-0.mongo.mongo-namespace.svc.cluster.local,mongo-1.mongo.mongo-namespace.svc.cluster.local,mongo-2.mongo.mongo-namespace.svc.cluster.local:27017/todos?replicaSet=rs0"
-          value: "mongodb://mongo-0.mongo.default.svc.cluster.local:27017/todos"
+          #value: "mongodb://mongo-0.mongo:27017/todos?replicaSet=rs0"
+          value: "mongodb://10.4.2.35:27017/todos?replicaSet=rs0"
 ---
 apiVersion: v1
 kind: Service
