@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nodejs-todo
-        image: gcr.io/dansand/github.com/svdansand/nodejs-todo
+        image: gcr.io/dansand-demo/github.com/svdansand/nodejs-todo:latest
         resources:
           requests:
             memory: "64Mi"
